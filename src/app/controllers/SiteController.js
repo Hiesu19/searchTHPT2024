@@ -1,13 +1,16 @@
 const Course = require("../models/Course");
 const Thpt_2024 = require("../models/Thpt_2024");
 
+const { multiMongooseToObject } = require("../../util/mongoose");
+
 class SiteController {
     //GET /
     home(req, res, next) {
         Course.find()
             .then((courses) => {
-                courses = courses.map((courses) => courses.toObject());
-                res.render("home", { courses });
+                res.render("home", {
+                    courses: multiMongooseToObject(courses),
+                });
             })
             .catch(next);
     }
