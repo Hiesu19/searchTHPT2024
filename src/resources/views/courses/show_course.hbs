@@ -1,7 +1,14 @@
 <div class="mt-4">
     <div class="row">
         <div class="col-lg-3">
-            <button>Học Ngay giá chỉ {{course.price}}</button>
+
+            <a
+                href="https://img.vietqr.io/image/970422-61704397979-compact.png?amount={{course.price}}&addInfo={{course.slug}}"
+                class="btn btn-primary"
+                target="_blank"
+            >
+                Học Ngay giá chỉ
+                {{course.price}}đ</a>
         </div>
         <div class="col-lg-9">
             <h2>{{course.title}}</h2>
