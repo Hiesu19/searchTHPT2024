@@ -1,15 +1,12 @@
 const Course = require("../models/Course");
 const Thpt_2024 = require("../models/Thpt_2024");
 
+const { multiMongooseToObject } = require("../../util/mongoose");
+
 class SiteController {
     //GET /
     home(req, res, next) {
-        Course.find()
-            .then((courses) => {
-                courses = courses.map((courses) => courses.toObject());
-                res.render("home", { courses });
-            })
-            .catch(next);
+        res.render("home");
     }
     //GET
     thpt_2024(req, res, next) {
@@ -24,10 +21,6 @@ class SiteController {
     //GET /search
     search(req, res) {
         res.render("search");
-    }
-    show_404(rep, res) {
-        // res.send("Loi ko tim thay trang !!!");
-        res.render("error_404");
     }
 }
 
