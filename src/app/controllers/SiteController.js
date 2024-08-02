@@ -6,13 +6,7 @@ const { multiMongooseToObject } = require("../../util/mongoose");
 class SiteController {
     //GET /
     home(req, res, next) {
-        Course.find()
-            .then((courses) => {
-                res.render("home", {
-                    courses: multiMongooseToObject(courses),
-                });
-            })
-            .catch(next);
+        res.render("home");
     }
     //GET
     thpt_2024(req, res, next) {
