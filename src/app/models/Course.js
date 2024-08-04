@@ -1,4 +1,7 @@
 const mongoose = require("mongoose");
+const slug = require("mongoose-slug-updater");
+
+mongoose.plugin(slug);
 
 const Schema = mongoose.Schema;
 
@@ -9,7 +12,7 @@ const Course = new Schema(
         description: { type: String },
         price: { type: String },
         img_thumbnail: { type: String },
-        slug: { type: String },
+        slug: { type: String, slug: "title", unique: true },
         videoID: { type: String },
     },
     {
