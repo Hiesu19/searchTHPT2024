@@ -6,7 +6,7 @@ const { multiMongooseToObject } = require("../../util/mongoose");
 class SiteController {
     //GET /
     home(req, res, next) {
-        res.render("home");
+        res.render("home" , {title:"Web của Hiesu"});
     }
     //GET
     thpt_2024(req, res, next) {

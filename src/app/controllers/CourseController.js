@@ -12,6 +12,7 @@ class CourseController {
                 } else {
                     res.render("courses/show_course", {
                         course: mongooseToObject(course),
+                        title: course.title,
                     });
                 }
             })
@@ -23,13 +24,14 @@ class CourseController {
             .then((courses) => {
                 res.render("courses/home_courses", {
                     courses: multiMongooseToObject(courses),
+                    title: "Courses",
                 });
             })
             .catch(next);
     }
     //[GET] /courses/create
     create(req, res, next) {
-        res.render("courses/create");
+        res.render("courses/create", { title: "Trang tạo khoá học" });
     }
     //[POST] /courses/store
     store(req, res, next) {
