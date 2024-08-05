@@ -1,7 +1,7 @@
 class NewsController {
     //GET /news
     news(req, res) {
-        res.render("news");
+        res.render("news", {title: "News"});
     }
 }
 
