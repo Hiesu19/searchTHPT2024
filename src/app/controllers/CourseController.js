@@ -44,6 +44,17 @@ class CourseController {
             .then(() => res.redirect("/"))
             .catch((error) => {});
     }
+    // /courses/:id/edit
+    edit(req, res, next) {
+        Course.findById(req.params.id)
+            .then((courses) => {
+                res.render("courses/edit", {
+                    courses: mongooseToObject(courses),
+                    title: "Cập nhật",
+                });
+            })
+            .catch(next);
+    }
 }
 
 module.exports = new CourseController();
