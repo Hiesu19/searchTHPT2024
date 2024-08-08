@@ -44,6 +44,32 @@ class CourseController {
             .then(() => res.redirect("/"))
             .catch((error) => {});
     }
+    // /courses/:id/edit
+    edit(req, res, next) {
+        Course.findById(req.params.id)
+            .then((courses) => {
+                res.render("courses/edit", {
+                    courses: mongooseToObject(courses),
+                    title: "Cập nhật",
+                });
+            })
+            .catch(next);
+    }
+
+    // [PUT] /courses/:id
+    update(req, res, next) {
+        Course.updateOne({ _id: req.params.id }, req.body)
+            .then(() => res.redirect("/me/store/courses"))
+            .catch(next);
+    }
+
+    //[DELETE] /courses/:id
+
+    destroy(req, res, next) {
+        Course.deleteOne({ _id: req.params.id })
+            .then(() => res.redirect("back"))
+            .catch(next);
+    }
 }
 
 module.exports = new CourseController();

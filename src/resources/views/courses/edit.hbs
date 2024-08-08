@@ -1,0 +1,80 @@
+<div class="mt-4">
+    <h2>Cập nhât khoá học</h2>
+    <form method="POST" , action="/courses/{{courses._id}}?_method=PUT">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input
+                type="text"
+                class="form-control"
+                value="{{courses.title}}"
+                id="title"
+                name="title"
+                placeholder="Nhập tiêu đề"
+            />
+
+        </div>
+        <div class="form-group">
+            <label for="author">Author</label>
+            <input
+                type="text"
+                class="form-control"
+                value="{{courses.author}}"
+                id="author"
+                name="author"
+                placeholder="Nhập tác giả"
+            />
+
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <input
+                type="text"
+                class="form-control"
+                value="{{courses.description}}"
+                id="description"
+                name="description"
+                placeholder="Nhập mô tả"
+            />
+
+        </div>
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input
+                type="text"
+                class="form-control"
+                value="{{courses.price}}"
+                id="price"
+                name="price"
+                placeholder="Nhập giá"
+            />
+
+        </div>
+        <div class="form-group">
+            <label for="img_thumbnail">Thumbnail</label>
+            <input
+                type="text"
+                class="form-control"
+                value="{{courses.img_thumbnail}}"
+                id="img_thumbnail"
+                name="img_thumbnail"
+                placeholder="Nhập thumbnai"
+            />
+
+        </div>
+        <div class="form-group">
+            <label for="videoID">VideoID</label>
+            <input
+                type="text"
+                class="form-control"
+                value="{{courses.videoID}}"
+                id="videoID"
+                name="videoID"
+                placeholder="Nhập videoID"
+            />
+
+        </div>
+
+        <button type="submit" class="btn btn-primary">Cập nhật</button>
+
+    </form>
+</div>
