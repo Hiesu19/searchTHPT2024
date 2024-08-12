@@ -1,0 +1,77 @@
+<div class="mt-4" id="thpt_2024-search">
+    <form
+        class="form-inline justify-content-center"
+        method="GET"
+        action="/thpt_2024/show"
+    >
+        <div class="form-group mb-2" style="flex-grow: 1;">
+            <label for="inputSBD" class="sr-only">Số báo danh</label>
+            <input
+                type="text"
+                class="form-control w-100"
+                id="inputSBD"
+                name="sbd"
+                placeholder="Nhập số báo danh"
+                style="min-width: 400px;"
+            />
+        </div>
+        <button type="submit" class="btn btn-primary ml-4 mb-2">Tra cứu</button>
+    </form>
+
+    <h2 class="text-center">Điểm thi của THPT 2024 của thí sinh
+        {{data.sbd}}</h2>
+
+    <div class="mt-4">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Môn thi</th>
+                    <th scope="col">Điểm</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Toán</th>
+                    <td>{{data.toan}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Ngữ văn</th>
+                    <td>{{data.ngu_van}}</td>
+
+                </tr>
+                <tr>
+                    <th scope="row">Vật lý</th>
+                    <td>{{data.vat_li}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Hoá học</th>
+                    <td>{{data.hoa_hoc}}</td>
+
+                </tr>
+                <tr>
+                    <th scope="row">Sinh học</th>
+                    <td>{{data.sinh_hoc}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Lịch sử</th>
+                    <td>{{data.lich_su}}</td>
+
+                </tr>
+                <tr>
+                    <th scope="row">Địa lý</th>
+                    <td>{{data.dia_li}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">GDCD</th>
+                    <td>{{data.gdcd}}</td>
+
+                </tr>
+                <tr>
+                    <th scope="row">Ngoại ngữ "{{data.ma_ngoai_ngu}}"</th>
+                    <td>{{data.ngoai_ngu}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
