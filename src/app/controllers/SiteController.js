@@ -1,15 +1,12 @@
 const Course = require("../models/Course");
 const Thpt_2024 = require("../models/Thpt_2024");
-const fs = require("fs");
-const pdfParse = require("pdf-parse");
 
 const { multiMongooseToObject } = require("../../util/mongoose");
 
-const pdfPath = "src/pdf/Doraemon35.pdf";
 class SiteController {
     //GET /
     home(req, res, next) {
-        res.render("home", { title: "Web của Hiesu" });
+        res.render("home" , {title:"Web của Hiesu"});
     }
     //GET
     thpt_2024(req, res, next) {
